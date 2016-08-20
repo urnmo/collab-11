@@ -1,14 +1,22 @@
 let currentValue = 0;
 
 function appendMessages(x) {
-    // let received = document.createElement('p');
-    // received.textContent = x;
-    // let messageBoard = document.querySelector('section');
-    // messageBoard.appendChild(x);
-    // x.classList.add('incoming');
+    let received = document.createElement('p');
+    received.textContent = x;
+    let messageBoard = document.getElementById('messageBoard');
+    messageBoard.appendChild(received);
+    received.classList.add('incoming');
     console.log(x);
 }
 
+let newInputValue = document.getElementById("message")
+let currentName = document.getElementById("username");
+
+function sentMessage(){
+    let sentMsg = currentName.value + newInputValue.value;
+    let theButton = document.querySelector('button');
+    theButton.addEventListener('click', appendMessages(sentMsg));
+}
 
 
 

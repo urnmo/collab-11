@@ -1307,21 +1307,34 @@ body {
       display: table; }
     body #buttonArray::after {
       clear: both; }
-    body #buttonArray input {
+    body #buttonArray #username {
+      width: 16.66667%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; }
+      @media screen and (min-width: 40em) {
+        body #buttonArray #username {
+          padding-left: 0.9375rem;
+          padding-right: 0.9375rem; } }
+      body #buttonArray #username:last-child:not(:first-child) {
+        float: right; }
+    body #buttonArray #message {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-right: 0.625rem; }
+      @media screen and (min-width: 40em) {
+        body #buttonArray #message {
+          padding-left: 0.9375rem;
+          padding-right: 0.9375rem; } }
+      body #buttonArray #message:last-child:not(:first-child) {
+        float: right; }
+    body #buttonArray input {
       border: 1px solid white;
       padding: 5px 8px;
       color: black;
-      font-size: 1em; }
-      @media screen and (min-width: 40em) {
-        body #buttonArray input {
-          padding-left: 0.9375rem;
-          padding-right: 0.9375rem; } }
-      body #buttonArray input:last-child:not(:first-child) {
-        float: right; }
+      font-size: 1em;
+      border-radius: 5px; }
     body #buttonArray button {
       width: 16.66667%;
       float: left;
@@ -1333,7 +1346,8 @@ body {
       background-color: lightblue;
       color: white;
       border-radius: 5px;
-      font-size: 18px; }
+      font-size: 18px;
+      margin-left: 1%; }
       @media screen and (min-width: 40em) {
         body #buttonArray button {
           padding-left: 0.9375rem;

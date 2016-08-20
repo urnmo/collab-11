@@ -16,16 +16,28 @@ background-color: darkslategray;
     display: block;
     margin: 5%;
  }
+// #gutter{
+//     @include grid-column(2);
+    
+// }
 
 #buttonArray{
     @include grid-row();
+
+    #username {
+        @include grid-column(2);
+    }
+
+    #message {
+        @include grid-column(6)
+    }
    
-   input{
-    @include grid-column(6);
+   input {
     border: 1px solid white;
     padding: 5px 8px;
     color: black;
     font-size: 1em;
+    border-radius: 5px;
 
    }
    button {
@@ -37,6 +49,8 @@ background-color: darkslategray;
     color: white;
     border-radius: 5px;
     font-size: 18px;
+    margin-left: 1%;
+
 
    }
 
