@@ -3,7 +3,33 @@
 @include foundation-global-styles;
 @include foundation-grid;
 
-button {
+$cell-height: 100px;
+body{
+@include grid-column();
+background-color: darkslategray;
+
+ #messageBoard {
+     @include grid-column(8);
+    text-align: center;
+    height: $cell-height;
+    border: 2px solid black;
+    display: block;
+    margin: 5%;
+ }
+
+#buttonArray{
+    @include grid-row();
+   
+   input{
+    @include grid-column(6);
+    border: 1px solid white;
+    padding: 5px 8px;
+    color: black;
+    font-size: 1em;
+
+   }
+   button {
+    @include grid-column(2);
     border: 1px solid white;
     padding: 5px 8px;
     text-align: center;
@@ -11,15 +37,8 @@ button {
     color: white;
     border-radius: 5px;
     font-size: 18px;
-    margin: 0 10px;
+
+   }
+
+    }
 }
-
-//1. map out div/section architechture
-//2. create a function for recieving messages that builds the div
-    //--refresh button (set interval, GET,)
-    //
-    
-//3. create a function for sending messages that builds the div
-    //send button and text box (post, qppending)
-
-//4. 
