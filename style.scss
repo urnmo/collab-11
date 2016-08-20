@@ -1,7 +1,18 @@
 @import "node_modules/foundation-sites/scss/foundation";
 
 @include foundation-global-styles;
+@include foundation-grid;
 
+button {
+    border: 1px solid white;
+    padding: 5px 8px;
+    text-align: center;
+    background-color: lightblue;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 0 10px;
+}
 
 //1. map out div/section architechture
 //2. create a function for recieving messages that builds the div
