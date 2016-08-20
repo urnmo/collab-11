@@ -9,35 +9,37 @@ function appendMessages(x) {
     console.log(x);
 }
 
-let newInputValue = document.getElementById("message")
-let currentName = document.getElementById("username");
-
-function sentMessage(){
-    let sentMsg = currentName.value + newInputValue.value;
-    let theButton = document.querySelector('button');
-    theButton.addEventListener('click', appendMessages(sentMsg));
-}
-
-
-
 function getInfo () {
     let request = new XMLHttpRequest();
     request.open('GET', 'http://chat.queencityiron.com/messages');
     request.addEventListener('load', function () {
         let response = JSON.parse(request.responseText);
         console.log(response);
-        for (let i = currentValue; currentValue < response.length; i++) {
+        for (let i = currentValue; i < response.length; i++) {
             if (i < response.length) {
                 let newMessage = response[i].user + ": " + response[i].message;
                 appendMessages(newMessage);
             }
         }
-
         currentValue = response.length;
         
     });
     request.send();
 }
+
+let newInput = document.getElementById("message");
+let currentName = document.getElementById("username");
+let theButton = document.querySelector("button");
+
+function sentMessage() {
+    let sentMsg = currentName.value + newInput.value;
+    console.log(sentMsg);
+    appendMessages(sentMsg);
+}
+
+theButton.addEventListener('click', function () {
+    sentMessage();
+});
 
 
 window.addEventListener('load', function () {
