@@ -32,15 +32,13 @@ let currentName = document.getElementById("username");
 let theButton = document.querySelector("button");
 
 function sentMessage() {
-    let sentMsg = currentName.value + newInput.value;
-    console.log(sentMsg);
+    let sentMsg = currentName.value + " " + newInput.value;
     appendMessages(sentMsg);
 }
 
 theButton.addEventListener('click', function () {
     sentMessage();
 });
-
 
 window.addEventListener('load', function () {
     // setInterval(getInfo, 3000);
