@@ -1289,7 +1289,7 @@ body {
     text-align: left;
     min-height: 100px;
     max-height: 300px;
-    border: 3px solid cadetblue;
+    border: 3px solid #416a9c;
     display: block;
     margin: 5%;
     overflow: scroll;
@@ -1299,6 +1299,27 @@ body {
       content: ' ';
       display: table; }
     body #messageBoard::after {
+      clear: both; }
+  body #mordicot {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #416a9c;
+    color: white; }
+    body #mordicot::before, body #mordicot::after {
+      content: ' ';
+      display: table; }
+    body #mordicot::after {
+      clear: both; }
+  body h1 {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0% 5%; }
+    body h1::before, body h1::after {
+      content: ' ';
+      display: table; }
+    body h1::after {
       clear: both; }
   body #buttonArray {
     max-width: 75rem;
@@ -1315,7 +1336,7 @@ body {
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem;
-      border: 3px solid cadetblue; }
+      border: 3px solid #416a9c; }
       @media screen and (min-width: 40em) {
         body #buttonArray #username {
           padding-left: 0.9375rem;
@@ -1328,7 +1349,7 @@ body {
       padding-left: 0.625rem;
       padding-right: 0.625rem;
       margin-left: 8.33333%;
-      border: 3px solid cadetblue; }
+      border: 3px solid #416a9c; }
       @media screen and (min-width: 40em) {
         body #buttonArray #message {
           padding-left: 0.9375rem;
@@ -1349,7 +1370,7 @@ body {
       border: 1px solid white;
       padding: 5px 8px;
       text-align: center;
-      background-color: cadetblue;
+      background-color: #416a9c;
       color: white;
       border-radius: 5px;
       font-size: 18px;

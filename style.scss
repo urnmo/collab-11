@@ -14,7 +14,7 @@ background-color: dimgray;
     text-align: left;
     min-height: $cell-height;
     max-height: 300px;
-    border: 3px solid cadetblue;
+    border: 3px solid #416a9c;
     display: block;
     margin: 5%;
     overflow: scroll;
@@ -22,7 +22,16 @@ background-color: dimgray;
     padding: 0% 2% ;
  }
 
+#mordicot{
+    @include grid-row;
+    background-color: #416a9c;
+    color: white
+}
 
+h1{
+    @include grid-row;
+     margin: 0% 5%;
+}
 #buttonArray{
     @include grid-row();
     margin: 5%;
@@ -32,13 +41,13 @@ background-color: dimgray;
 
     #username {
         @include grid-column(2);
-            border: 3px solid cadetblue;
+            border: 3px solid #416a9c;
     }
 
     #message {
         @include grid-column(6);
         @include grid-column-offset(1);
-        border: 3px solid cadetblue;
+        border: 3px solid #416a9c;
     }
    
    input {
@@ -54,7 +63,7 @@ background-color: dimgray;
     border: 1px solid white;
     padding: 5px 8px;
     text-align: center;
-    background-color: cadetblue;
+    background-color: #416a9c;
     color: white;
     border-radius: 5px;
     font-size: 18px;
