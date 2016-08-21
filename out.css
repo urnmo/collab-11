@@ -1271,37 +1271,36 @@ button {
     margin-right: 0;
     float: left; } }
 body {
-  width: 100%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
   background-color: darkslategray; }
-  @media screen and (min-width: 40em) {
-    body {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  body:last-child:not(:first-child) {
-    float: right; }
+  body::before, body::after {
+    content: ' ';
+    display: table; }
+  body::after {
+    clear: both; }
   body #messageBoard {
-    width: 66.66667%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    height: 100px;
+    min-height: 100px;
+    max-height: 300px;
     border: 2px solid black;
     display: block;
-    margin: 5%; }
-    @media screen and (min-width: 40em) {
-      body #messageBoard {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
-    body #messageBoard:last-child:not(:first-child) {
-      float: right; }
+    margin: 5%;
+    overflow: scroll; }
+    body #messageBoard::before, body #messageBoard::after {
+      content: ' ';
+      display: table; }
+    body #messageBoard::after {
+      clear: both; }
   body #buttonArray {
     max-width: 75rem;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    margin: 5%; }
     body #buttonArray::before, body #buttonArray::after {
       content: ' ';
       display: table; }
@@ -1322,7 +1321,8 @@ body {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem; }
+      padding-right: 0.625rem;
+      margin-left: 8.33333%; }
       @media screen and (min-width: 40em) {
         body #buttonArray #message {
           padding-left: 0.9375rem;

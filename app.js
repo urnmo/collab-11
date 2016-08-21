@@ -2,11 +2,8 @@
 let currentValue = 0;
 
 function appendMessages(x) {
-    let received = document.createElement('p');
-    received.textContent = x;
     let messageBoard = document.getElementById('messageBoard');
-    messageBoard.appendChild(received);
-    received.classList.add('incoming');
+    messageBoard.appendChild(x);
     console.log(x);
 }
 
@@ -19,29 +16,43 @@ function getInfo () {
         for (let i = currentValue; i < response.length; i++) {
             if (i < response.length) {
                 let newMessage = response[i].user + ": " + response[i].message;
-                appendMessages(newMessage);
+                let received = document.createElement('p');
+                received.textContent = newMessage;
+                received.classList.add('incoming');
+                appendMessages(received);
             }
         }
         currentValue = response.length;
-        
     });
     request.send();
 }
 
-let newInput = document.getElementById("message");
-let currentName = document.getElementById("username");
-let theButton = document.querySelector("button");
-
-function sentMessage() {
-    let sentMsg = currentName.value + " " + newInput.value;
-    appendMessages(sentMsg);
+function addMessage(msg) {
+    console.log (msg);
+    let request = new XMLHttpRequest();
+    request.open('POST', 'http://chat.queencityiron.com/messages');
+    request.addEventListener('load', function () {
+        getInfo();
+    });
+    request.send(JSON.stringify(msg));
 }
 
-theButton.addEventListener('click', function () {
-    sentMessage();
+window.addEventListener('load', function () {
+    getInfo();
+
+    let submitBtn = document.getElementById("theButton");
+    submitBtn.addEventListener('click', function () {
+        addMessage({
+            user: document.getElementById('username').value,
+            message: document.getElementById('message').value,
+        });
+        document.getElementById("message").value = "";
+    });
 });
 
+
 window.addEventListener('load', function () {
-    // setInterval(getInfo, 3000);
+    setInterval(getInfo, 3000);
     getInfo();
 });
+
