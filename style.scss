@@ -6,17 +6,20 @@
 $cell-height: 100px;
 body{
 @include grid-row();
-background-color: darkslategray;
-
+background-image: url("http://wallpaperrs.com/uploads/3d-abstract/metal-texture-wide-wallpaper-13099.jpg");
+background-blend-mode: overlay;
+background-color: dimgray;
  #messageBoard {
      @include grid-row();
-    text-align: center;
+    text-align: left;
     min-height: $cell-height;
     max-height: 300px;
-    border: 2px solid black;
+    border: 3px solid cadetblue;
     display: block;
     margin: 5%;
     overflow: scroll;
+    background-color: lightgray;
+    padding: 0% 2% ;
  }
 
 
@@ -29,11 +32,13 @@ background-color: darkslategray;
 
     #username {
         @include grid-column(2);
+            border: 3px solid cadetblue;
     }
 
     #message {
         @include grid-column(6);
         @include grid-column-offset(1);
+        border: 3px solid cadetblue;
     }
    
    input {
@@ -49,7 +54,7 @@ background-color: darkslategray;
     border: 1px solid white;
     padding: 5px 8px;
     text-align: center;
-    background-color: lightblue;
+    background-color: cadetblue;
     color: white;
     border-radius: 5px;
     font-size: 18px;
