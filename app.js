@@ -1,6 +1,11 @@
 
 let currentValue = 0;
 
+function scrollBottom () {
+    let messageBoard = document.getElementById('messageBoard');
+    messageBoard.scrollTop = messageBoard.scrollHeight;
+}
+
 function appendMessages(x) {
     let messageBoard = document.getElementById('messageBoard');
     messageBoard.appendChild(x);
@@ -53,6 +58,7 @@ window.addEventListener('load', function () {
 
 window.addEventListener('load', function () {
     setInterval(getInfo, 3000);
+    setInterval(scrollBottom, 3000);
     getInfo();
 });
 
